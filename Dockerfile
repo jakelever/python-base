@@ -2,6 +2,9 @@
 
 FROM python:3.8-slim-buster
 
+RUN apt-get update
+RUN apt-get install -y build-essential curl file git gawk
+
 RUN pip install kindred snakemake zenodo_get
 RUN python -m spacy download en_core_web_sm
 RUN pip install scispacy
